@@ -1,50 +1,72 @@
-import axios from "axios"
+import axios from "axios";
 const diztestAPI = axios.create({
   baseURL: "https://diztest-5.botics.co",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
+});
+
 function api_docs_schema_retrieve(payload) {
-  return diztestAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
+  return diztestAPI.get(`/api-docs/schema/`, {
+    params: {
+      lang: payload.lang
+    }
+  });
 }
+
 function api_v1_login_create(payload) {
-  return diztestAPI.post(`/api/v1/login/`, payload)
+  return diztestAPI.post(`/api/v1/login/`, payload);
 }
+
 function api_v1_signup_create(payload) {
-  return diztestAPI.post(`/api/v1/signup/`, payload)
+  return diztestAPI.post(`/api/v1/signup/`, payload);
 }
+
 function rest_auth_login_create(payload) {
-  return diztestAPI.post(`/rest-auth/login/`, payload)
+  return diztestAPI.post(`/rest-auth/login/`, payload);
 }
+
 function rest_auth_logout_retrieve(payload) {
-  return diztestAPI.get(`/rest-auth/logout/`)
+  return diztestAPI.get(`/rest-auth/logout/`);
 }
+
 function rest_auth_logout_create(payload) {
-  return diztestAPI.post(`/rest-auth/logout/`)
+  return diztestAPI.post(`/rest-auth/logout/`);
 }
+
 function rest_auth_password_change_create(payload) {
-  return diztestAPI.post(`/rest-auth/password/change/`, payload)
+  return diztestAPI.post(`/rest-auth/password/change/`, payload);
 }
+
 function rest_auth_password_reset_create(payload) {
-  return diztestAPI.post(`/rest-auth/password/reset/`, payload)
+  return diztestAPI.post(`/rest-auth/password/reset/`, payload);
 }
+
 function rest_auth_password_reset_confirm_create(payload) {
-  return diztestAPI.post(`/rest-auth/password/reset/confirm/`, payload)
+  return diztestAPI.post(`/rest-auth/password/reset/confirm/`, payload);
 }
+
 function rest_auth_registration_create(payload) {
-  return diztestAPI.post(`/rest-auth/registration/`, payload)
+  return diztestAPI.post(`/rest-auth/registration/`, payload);
 }
+
 function rest_auth_registration_verify_email_create(payload) {
-  return diztestAPI.post(`/rest-auth/registration/verify-email/`, payload)
+  return diztestAPI.post(`/rest-auth/registration/verify-email/`, payload);
 }
+
 function rest_auth_user_retrieve(payload) {
-  return diztestAPI.get(`/rest-auth/user/`)
+  return diztestAPI.get(`/rest-auth/user/`);
 }
+
 function rest_auth_user_update(payload) {
-  return diztestAPI.put(`/rest-auth/user/`, payload)
+  return diztestAPI.put(`/rest-auth/user/`, payload);
 }
+
 function rest_auth_user_partial_update(payload) {
-  return diztestAPI.patch(`/rest-auth/user/`, payload)
+  return diztestAPI.patch(`/rest-auth/user/`, payload);
 }
+
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -60,4 +82,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-}
+};
